@@ -1,0 +1,74 @@
+<!-- <app-sidebar></app-sidebar> -->
+<div class="sidebar">
+    <div class="logo-details">
+        <img src="assets/img/iconos/universityIcon.png" alt="PRACTICUM" style="cursor: pointer;width: 100px; height: 100px;"
+            [routerLink]="['/home/inicio']" title="PRACTICUM">
+    </div>
+    <span style="overflow-y: auto;">
+        <ul class="nav-links">
+            <li *ngFor="let menu of listaMenu">
+                <span *ngIf="menu.submenu == false">
+                    <!-- [routerLinkActive]="['active']"  solo funciona con rutas unicas con subrutas no funciona-->
+                    <a routerLink="{{menu.ruta}}">
+                        <img [src]="menu.icono" alt="PRACTICUM">
+                        <span class="link_name">
+                            {{menu.nombre}}
+                        </span>
+                    </a>
+                    <ul class="submenu blank">
+                        <li>
+                            <a routerLink="{{menu.ruta}}" class="link_name">{{menu.nombre}}</a>
+                        </li>
+                    </ul>
+                </span>
+                <a (click)="subMenu($event)" *ngIf="menu.submenu == true">
+                    <img [src]="menu.icono" alt="PRACTICUM">
+                    <span class="link_name" style="cursor: pointer;">
+                        {{menu.nombre}}
+                    </span>
+                </a>
+                <ul class="submenu" *ngIf="menu.submenu == true">
+                    <li>
+                        <a class="link_name">{{menu.nombre}}</a>
+                    </li>
+                    <li *ngFor="let sub of menu.listaMenus">
+                        <a routerLink="{{sub.ruta}}">{{sub.menu}}</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </span>
+</div>
+<div class="home-section" id="body_side">
+    <div class="menu_header">
+        <svg class='bx bx-menu svg_btn' xmlns="http://www.w3.org/2000/svg" width="19px" height="19px" style="cursor: pointer;"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg>
+        <div class="menu_header_notificaciones">
+            <svg class="svg_btn" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32"><path d="M12 22a2.98 2.98 0 0 0 2.818-2H9.182A2.98 2.98 0 0 0 12 22zm7-7.414V10c0-3.217-2.185-5.927-5.145-6.742C13.562 2.52 12.846 2 12 2s-1.562.52-1.855 1.258C7.185 4.074 5 6.783 5 10v4.586l-1.707 1.707A.996.996 0 0 0 3 17v1a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-1a.996.996 0 0 0-.293-.707L19 14.586z"></path></svg>
+            <svg class="svg_btn" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32"><path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path></svg>
+            <div class="menu_header_notificaciones_user">
+                <img src="assets/img/iconos/universityIcon.png" alt="usuario">
+                <button mat-icon-button [matMenuTriggerFor]="menu" class="btn_sinfondo">
+                    <p>PRACTICUM</p>
+                  </button>
+                  <mat-menu #menu="matMenu">
+                    <!-- <button mat-menu-item>
+                      <mat-icon>dialpad</mat-icon>
+                      <span>Redial</span>
+                    </button>
+                    <button mat-menu-item>
+                      <mat-icon>voicemail</mat-icon>
+                      <span>Check voice mail</span>
+                    </button> -->
+                    <button mat-menu-item class="btn_seleccion" (click)="logout()">
+                      <!-- <mat-icon>notifications_off</mat-icon> -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M16 13v-2H7V8l-5 4 5 4v-3z"></path><path d="M20 3h-9c-1.103 0-2 .897-2 2v4h2V5h9v14h-9v-4H9v4c0 1.103.897 2 2 2h9c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2z"></path></svg>
+                      <span>Cerrar Sesión</span>
+                    </button>
+                  </mat-menu>
+            </div>
+        </div>
+    </div>
+    <div class="container_body">
+        <router-outlet></router-outlet>
+    </div>
+</div>

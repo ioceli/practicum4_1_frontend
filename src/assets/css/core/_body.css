@@ -1,0 +1,74 @@
+/* A CSS reset. It is used to make sure that all browsers render all elements more consistently and in
+line with modern standards. It's a short, often compressed (minified) set of CSS rules that resets
+the styling of all HTML elements to a consistent baseline. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    font-size: 0.85rem;
+    
+  }
+  
+  body {
+    background: #142D30;
+    /* background-color: #ececee; */
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px; /* Tamaño del scroll en vertical */
+    height: 8px; /* Tamaño del scroll en horizontal */
+    /* display: none; */
+  }
+  
+  /* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 4px;
+    box-shadow: 0 0 2px 1px #00000033;
+  }
+  
+  /* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+    box-shadow: 0 0 2px 1px #00000033;
+  }
+  
+  /* Cambiamos el fondo cuando esté en active */
+  ::-webkit-scrollbar-thumb:active {
+    background-color: transparent;
+  }
+  
+  /* Ponemos un color de fondo y redondeamos las esquinas del track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 4px;
+  }
+  
+  /* Cambiamos el fondo cuando esté en active o hover */
+  ::-webkit-scrollbar-track:hover,
+  ::-webkit-scrollbar-track:active {
+    background: transparent;
+  }
+  
+  .row {
+    margin: 10px 0;
+  }
+  
+  /* estilos para los inputs de angular material*/
+  
+  .mat-focused .mat-form-field-label {
+    /*color hover del input*/
+    color: var(--agencia-color) !important;
+  }
+  
+  .mat-form-field-underline {
+    /*cambia la linea de color inferior*/
+    background-color: var(--agencia-color) !important;
+  }
+  
+  .mat-form-field-ripple {
+    /*color para la linea de abajo cuando esta activa*/
+    background-color: var(--agencia-color) !important;
+  }

@@ -1,0 +1,30 @@
+<div class="login">
+    <div class="login__card">
+        <div class="login__card_img">
+            <img src="assets/img/iconos/icono-ACESS-logo.png" alt="ACESS">
+        </div>
+        <div class="login__card_register">
+            <br>
+            <h2 style="font-size: 19px; color: #fff;">Iniciar Sesión</h2>
+            <br>
+            <form [formGroup]="formulario" (ngSubmit)="login()" class="login__card_form">
+                <div class="grid">
+                    <div class="col-12 md:col-6 lg:col-12" style="font-weight: 400; color: #fff;">{{msg.lbl_usuario}}: <br>
+                        <input type="text" pInputText id="usuario" formControlName="usuario"/></div>
+                </div>
+                <div class="grid">
+                    <div class="col-12 md:col-6 lg:col-12" style="font-weight: 400; color: #fff;">{{msg.lbl_contrasenia}}: <br>
+                        <div class="card flex justify-content-center">
+                            <p-password [toggleMask]="true" id="password" formControlName="password"></p-password>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tool_bar">
+                    <p-button label="{{msg.lbl_iniciar_sesion}}" styleClass="p-button-rounded p-button-success" type="submit"></p-button>
+                </div>
+                <a href="#" class="password__link">¿Has olvidado tu contraseña?</a>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import "assets/css/general.css";
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  background-color: #dad8d8a4;
+  /* background-color: #212e36e8; */
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

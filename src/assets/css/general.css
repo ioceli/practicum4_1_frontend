@@ -1,0 +1,10 @@
+/*
+    importacion de hoja de estilos de todas las secciones
+*/
+@import "core/_menu.css";
+@import "core/_body.css";
+@import "core/_botones.css";
+@import "core/_componentes.css";
+@import "core/_paginas.css";
+@import "core/_login.css";
+@import "core/_cards.css";

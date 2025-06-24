@@ -1,0 +1,40 @@
+.btn_sinfondo{
+    border: none;
+    background-color: #d8d8d8;
+    cursor: pointer;
+}
+
+.mat-menu-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+button.mat-menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.svg_btn{
+    fill: #585858;
+}
+
+.svg_btn:hover{
+    fill: #000000;
+}
+
+.tool_bar{
+    display: flex;
+    /* width: 100%; */
+}
+
+.label{
+    font-size: 12px;
+    font-weight: 500;
+    margin: 5px;
+}
+
+.line__buttons{
+    width: 100%;
+    display: flex;
+}
